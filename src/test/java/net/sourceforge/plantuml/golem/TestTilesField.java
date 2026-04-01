@@ -27,22 +27,32 @@ public class TestTilesField {
 
     @Test
     public void testCreateTileNorthPosition() {
+    		tilesField = new TilesField();
+    		Tile start = tilesField.getRoot();
+        Tile dest = new Tile(1);
+        TileGeometry startDirection = TileGeometry.NORTH;
+        tilesField.createTile(start, startDirection);
     }
 
     @Test
     public void testCreateTileInvalidPosition() {
+    		tilesField = new TilesField()
+    		Title
     }
 
     @Test
     public void testCreateTileOccupiedPosition() {
+
     }
 
     @Test
     public void testCreateTileInvalidTile() {
+
     }
 
     @Test
     public void testCreateTileNullTile() {
+
     }
 
     // ============================================================================================
@@ -121,7 +131,7 @@ public class TestTilesField {
         var tileArea2 = new TileArea(tile2, TileGeometry.WEST);
         tilesField.addPosition(tile1, new Position(0, 0, 1, 1));
         tilesField.addPosition(tile2, new Position(2, 0, 3, 1));
-        
+
         assertEquals(Path.build(tileArea1, tileArea2), buildPath(tilesField, tileArea1, tileArea2));
     }
 
