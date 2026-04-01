@@ -299,4 +299,20 @@ public class TilesField extends TextBlockMemoized {
 		return new XDimension2D(width * dimSingle.getWidth(), height * dimSingle.getHeight());
 	}
 
+
+	// ============================================================================================
+	// TEST HELPER METHODS
+	// ============================================================================================
+
+	public int getSize() {
+		return size;
+	}
+
+	public Map<Tile, Position> getPositions() {
+		return positions;
+	}
+
+	public void addPosition(Tile tile, Position position) {
+		positions.put(tile, position);
+	}
 }

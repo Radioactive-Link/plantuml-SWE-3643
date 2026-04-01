@@ -59,4 +59,23 @@ public class Path {
 		return all.get(all.size() - 1);
 	}
 
+	// ============================================================================================
+	// TEST HELPER METHODS
+	// ============================================================================================
+
+	@Override
+	public boolean equals(Object other) {
+		if (other == this) {
+			return true;
+		}
+
+		if (!(other instanceof Path)) {
+			return false;
+		}
+
+		Path path = (Path)other;
+
+		return getStart().equals(path.getStart())
+			&& getDest().equals(path.getDest());
+	}
 }
