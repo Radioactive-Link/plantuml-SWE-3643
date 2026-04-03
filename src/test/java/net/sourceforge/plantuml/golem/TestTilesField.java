@@ -28,25 +28,29 @@ public class TestTilesField {
     @Test
     public void testCreateTileNorthPosition() {
     		Tile start = tilesField.getRoot();
-        Tile dest = new Tile(1);
         TileGeometry startDirection = TileGeometry.NORTH;
         tilesField.createTile(start, startDirection);
     }
 
     @Test
     public void testCreateTileInvalidPosition() {
-    		tilesField = new TilesField()
-    		Title
+    		assertThrows(NullPointerException.class, tilesField.createTile(tilesField.getRoot(), null);
     }
 
     @Test
     public void testCreateTileOccupiedPosition() {
+				Tile start = TilesField.getRoot();
+				TilesField.createTile(start, TileGeometry.NORTH);
+				try {
+						TilesField.createTile(start, TitleGeometry.NORTH);
+				}
+				catch {
 
+				}
     }
 
     @Test
     public void testCreateTileInvalidTile() {
-    		tilesField
     		TileGeometry startGeom = TileGeometry.NORTH;
     		assertThrows(IllegalArgumentException.class, tilesField.createTile(Tile(15), startGeom));
     }
