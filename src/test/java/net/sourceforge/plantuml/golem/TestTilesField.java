@@ -41,12 +41,7 @@ public class TestTilesField {
     public void testCreateTileOccupiedPosition() {
 				Tile start = TilesField.getRoot();
 				TilesField.createTile(start, TileGeometry.NORTH);
-				try {
-						TilesField.createTile(start, TitleGeometry.NORTH);
-				}
-				catch {
-
-				}
+				assertDoesNotThrow(TilesField.createTile(start, TileGeometry.NORTH);
     }
 
     @Test
@@ -57,7 +52,7 @@ public class TestTilesField {
 
     @Test
     public void testCreateTileNullTile() {
-
+				assertThrows(NullPointerException.class, tilesFields.createTile(TilesField.getRoot(), TileGeometry.NORTH));
     }
 
     // ============================================================================================
