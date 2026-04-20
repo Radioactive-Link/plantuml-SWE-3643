@@ -52,4 +52,23 @@ public class TileArea {
 	public TileGeometry getGeometry() {
 		return position;
 	}
+
+	// ============================================================================================
+	// TEST HELPER METHODS
+	// ============================================================================================
+
+	@Override
+	public boolean equals(Object other) {
+		if (other == this) {
+			return true;
+		}
+
+		if (!(other instanceof TileArea)) {
+			return false;
+		}
+
+		TileArea ta = (TileArea)other;
+
+		return tile.equals(ta.tile) && position.equals(ta.position);
+	}
 }

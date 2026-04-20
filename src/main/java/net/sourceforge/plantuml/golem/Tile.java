@@ -97,4 +97,26 @@ public class Tile implements TextBlock {
 	public XDimension2D calculateDimension(StringBounder stringBounder) {
 		return new XDimension2D(SIZE, SIZE);
 	}
+
+	// ============================================================================================
+	// TEST HELPER METHODS
+	// ============================================================================================
+
+	/**
+	 * Equals implemented based on the fact that the only field that changes between tiles is num.
+	 */
+	@Override
+	public boolean equals(Object other) {
+		if (other == this) {
+			return true;
+		}
+
+		if (!(other instanceof Tile)) {
+			return false;
+		}
+
+		Tile tile = (Tile)other;
+
+		return Integer.compare(this.num, tile.num) == 0;
+	}
 }
